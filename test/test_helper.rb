@@ -1,7 +1,7 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-require "minitest/reporters"
+require 'minitest/reporters'
 Minitest::Reporters.use!
 
 # Returns the hash digest of the given string.
@@ -19,10 +19,8 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
-
-  def login_as(user, password: "password")
+  def login_as(user, password: 'password')
     post login_url, params: { session: { username: user.username,
                                          password: password } }
-
   end
 end

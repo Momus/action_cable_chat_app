@@ -16,12 +16,12 @@ class MessagesController < ApplicationController
 
   private
 
-    def get_messages
-      @messages = Message.for_display
-      @message  = current_user.messages.build
-    end
+  def get_messages
+    @messages = Message.for_display
+    @message  = current_user.messages.build
+  end
 
-    def message_params
-      params.require(:message).permit(:content)
-    end
+  def message_params
+    params.require(:message).permit(:content)
+  end
 end
